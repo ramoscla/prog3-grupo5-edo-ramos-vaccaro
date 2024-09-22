@@ -1,4 +1,3 @@
-import React from "react";
 import React, { Component } from 'react';
 
 
@@ -19,8 +18,9 @@ class Formulario extends Component {
     render() {
       return (
        <form onSubmit={(event)=>this.evitarSubmit(event)}>
-         <label>Name:</label>
-         <input type="text" onChange={(event)=>this.controlarCambios(event)} value={this.state.valor} />
+
+         <label></label>
+         <input type="text" onChange={(event)=>this.controlarCambios(event)} value={this.state.valor} placeholder= ""/>
          <input type="submit" value="Submit" />
        </form>
       );
