@@ -1,6 +1,7 @@
 import React from "react";
 import React, { Component } from 'react';
 
+
 class Formulario extends Component {
     constructor(props) {
       super(props);
