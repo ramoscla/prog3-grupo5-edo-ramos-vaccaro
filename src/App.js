@@ -8,9 +8,8 @@ function App() {
   return (
     <>
     <Header/> 
-
+    
     <Switch>
-
       <Route path="/" exact={true} component={Home} />
     {/* <Route path="/favoritas" component={} />
      <Route path="/todas" component={} />
