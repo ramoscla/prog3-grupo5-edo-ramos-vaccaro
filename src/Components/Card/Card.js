@@ -6,7 +6,12 @@ import './card.css';
 class Card extends Component{
     constructor(props){
         super(props)
-        console.log(this.props.id)
+
+        this.state = {
+            pelicula: null, 
+
+        }
+        
         
     }
     componentDidMount(){ 
@@ -16,7 +21,7 @@ class Card extends Component{
         .then((data) => {
             this.setState(
                 {
-                    pelicula: data.results,
+                    pelicula: data,
 
                 }
               
@@ -29,15 +34,19 @@ class Card extends Component{
 
     }
         render(){
+            if(this.state.pelicula){
+                console.log(this.state.pelicula)
+
             return(
             <div>
                 <img src=''></img>
-                <h3>{}</h3>
-                <p>{} </p>
-                <p>{}</p>
+                <h3>{this.state.pelicula.original_title}</h3>
+                <p className='descripcion'>{this.state.pelicula.overview} </p>
+                <a href=''>Ir a detalles</a>
+                <p>AGRRGAR A FAVORTITOS</p>
             </div>
             )
-        }
+        }}
     
 
 
