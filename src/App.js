@@ -7,8 +7,8 @@ import Footer from './Components/Footer/Footer';
 function App() {
   return (
     <>
-    <Header/> 
-    
+   
+
     <Switch>
       <Route path="/" exact={true} component={Home} />
     {/* <Route path="/favoritas" component={} />
