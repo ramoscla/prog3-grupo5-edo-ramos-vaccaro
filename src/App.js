@@ -8,12 +8,16 @@ function App() {
   return (
     <>
    
+ 
 
     <Switch>
       <Route path="/" exact={true} component={Home} />
     {/* <Route path="/favoritas" component={} />
-     <Route path="/todas" component={} />
-     <Route path="/detalle" component={} /> */}
+     <Route path="/proximamente" component={} />
+     <Route path="/cartelera" component={} />
+     <Route path="/detalle" component={} /> 
+    
+     */}
     </Switch>
 
     <Footer/>
