@@ -1,7 +1,7 @@
 function App() {
   return (
 
-        <p> React </p>
+        <p> hola  </p>
   );
 }
 export default App;
