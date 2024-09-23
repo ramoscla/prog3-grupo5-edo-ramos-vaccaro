@@ -10,8 +10,7 @@ class CardGrid extends Component{
         super(props)
 
         this.state={
-            arrayPelicula:[100, 50, 30, 29 ],
-           
+            arrayPeliculas:[],  
         }
 
         
@@ -20,7 +19,8 @@ class CardGrid extends Component{
     componentDidMount() {
         fetch(this.props.url)
             .then(response => response.json())
-            .then(data => this.setState({ datos: data.results }))
+            .then(data => this.setState({ arrayPeliculas: data.results }), ()=> console.log(this.state.arrayPeliculas)
+            )
             .catch(err => console.error(err));
     }
 
@@ -29,8 +29,8 @@ class CardGrid extends Component{
         return(
         <section className='card-container'>
        
-            {this.state.arrayPelicula.map((id)=> (
-                 <Card id={id} /> 
+            {this.state.arrayPeliculas.slice(0,5).map((pelicula, idx)=> (
+                 <Card pelicula={pelicula} key={idx} /> 
             ))}
        
 
