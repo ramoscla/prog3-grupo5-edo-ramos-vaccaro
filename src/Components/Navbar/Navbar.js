@@ -13,7 +13,7 @@ const Navbar = () => {
                 </Link>
             </li>
             <li className="nav-item">
-                <Link to="/favoritas" className="nav-links">
+                <Link to="/favoritos" className="nav-links">
                 Favoritas
                 </Link>
             </li>

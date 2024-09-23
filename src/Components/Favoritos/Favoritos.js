@@ -6,33 +6,38 @@ class Favoritos extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            favoritos: [],
-            pelicula: null,
-            esFavorito: false,
+            peliculas: [],
         };
     }
     
     componentDidMount() {
+
+        
         const storage = localStorage.getItem("favoritos");
         if (storage !== null) {
             const parsedStorage = JSON.parse(storage);
-            this.setState({
-                favoritos: parsedStorage,
-                
-            });
-        }
+            Promise.all (
+            parsedStorage.map ((id) =>
+            fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=31e421d77201e7a1eefe33f85b67fa3b`)
+            .then((response) => response.json())
+            .then((results) => {
+                this.setState({
+                    peliculas: [...this.state.peliculas, results]
+                },
+                );
+            }
+        )))
     }
+}
     
 render() {
-    console.log(this.state.favoritos)
-    console.log("caca")
-
+    console.log(this.state.peliculas)
     return (
         <div>
             <h1>Favoritos</h1>
             <div className="card-grid">
-                {this.state.favoritos.map((id) => (
-                    <Card id={id} />
+                {this.state.peliculas.map((pelicula) => (
+                    <Card pelicula={pelicula} />
                 ))}
             </div>
         </div>
