@@ -7,12 +7,12 @@ class DetalleCard extends Component {
     constructor (props) {
         super(props);
         this.state = {
-            id: this.props.id
+           
         }
 
     }
     componentDidMount() {
-        fetch(`https://api.themoviedb.org/3/movie/${this.state.id}?api_key=31e421d77201e7a1eefe33f85b67fa3b`)
+        fetch(`https://api.themoviedb.org/3/movie/${this.props.id}?api_key=31e421d77201e7a1eefe33f85b67fa3b`)
         .then((response) => response.json())
         .then((results) => {
             this.setState({
