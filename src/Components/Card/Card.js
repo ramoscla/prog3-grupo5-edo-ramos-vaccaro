@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './card.css';
+import { Link } from 'react-router-dom';
 
-//`https://api.themoviedb.org/3/movie/${id}?api_key=31e421d77201e7a1eefe33f85b67fa3b` 
 
 class Card extends Component{
  constructor(props){
@@ -72,17 +72,19 @@ agregarAFavoritos(){
         // })
     
         render(){
-            const {original_title, overview} = this.props.pelicula
+            const {original_title, overview, poster_path, id} = this.props.pelicula
             //if(this.state.pelicula){
               //  console.log(this.state.pelicula)
+              console.log(poster_path)
 
             return(
             <div className='movie-card'>
-               
-                <h3 >{original_title}</h3>
+
+                <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt='portada'/>
+                <h3>{original_title}</h3>
                 <p className='descripcion'>{overview} </p>
-                <p>Ir a detalles</p>
-                //  <button onClick={() => !this.props.pelicula.esFavorito} > {!this.props.pelicula.esFavorito ? "Agregar a favoritos" : "Quitar de favoritos"}</button>
+                <Link to={`/detalle/${id}`}>Ir a detalles</Link>
+                <button onClick={!this.props} > {!this.props.pelicula.esFavorito ? "Agregar a favoritos" : "Quitar de favoritos"}</button>
             </div>
             )
         }}
