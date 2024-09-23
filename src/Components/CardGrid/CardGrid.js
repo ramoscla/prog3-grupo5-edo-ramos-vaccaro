@@ -10,7 +10,7 @@ class CardGrid extends Component{
         super(props)
 
         this.state={
-            arrayPelicula:[],
+            arrayPelicula:[100, 50, 30, 29 ],
            
         }
 
@@ -29,8 +29,8 @@ class CardGrid extends Component{
         return(
         <section className='card-container'>
        
-            {Card.map((Card, idx)=> (
-                 <Card key={idx} Card={Card} /> 
+            {this.state.arrayPelicula.map((id)=> (
+                 <Card id={id} /> 
             ))}
        
 
