@@ -4,29 +4,30 @@ import './card.css';
 //`https://api.themoviedb.org/3/movie/${id}?api_key=31e421d77201e7a1eefe33f85b67fa3b` 
 
 class Card extends Component{
-    constructor(props){
+ constructor(props){
         super(props)
 
         this.state = {
-            pelicula: null, 
+            //pelicula: null, 
             esFavorito: false
         } 
     };
     
-    componentDidMount() { 
-    const storage = localStorage.getItem("favoritos") 
-    if (storage !== null) {
-    const parsedStorage = JSON.parse(storage); 
-    const estaEnFavoritos = parsedStorage.includes (this.props.pelicula.id)
+
+    // componentDidMount() { 
+        //const storage = localStorage.getItem("favoritos") 
+        //if (storage !== null) {
+            // const parsedStorage = JSON.parse(storage); 
+            // const estaEnFavoritos = parsedStorage.includes (this.props.pelicula.id)
     
-    if(estaEnFavoritos){
-    this.setState({
-    esFavorito:true
-    })
-    }};
-}
+            //if(estaEnFavoritos){
+                //this.setState({
+                    //esFavorito:true
+                    //})
+                    // }};
+                    //}
     
-    agregarAFavoritos(){
+agregarAFavoritos(){
     
     const storage = localStorage.getItem("favoritos") 
     if (storage !== null) {
@@ -56,42 +57,38 @@ class Card extends Component{
     });
     } 
     
-    componentDidMount(){ 
-        fetch(`https://api.themoviedb.org/3/movie/${this.props.id}?api_key=31e421d77201e7a1eefe33f85b67fa3b`)
+    //componentDidMount(){ 
+    //  fetch(`https://api.themoviedb.org/3/movie/${this.props.id}?api_key=31e421d77201e7a1eefe33f85b67fa3b`)
 
-        .then((response ) => response.json())
-        .then((data) => {
-            this.setState(
-                {
-                    pelicula: data,
+    //  .then((response ) => response.json())
+     //   .then((data) => {
+      //      this.setState(
+        //        {
+          //          pelicula: data,
 
-                }
+            //    }
               
-            )
-        })
+           // )
+        // })
     
-        console.log(this.state.pelicula)
-
-        
-
-    }
         render(){
-            if(this.state.pelicula){
-                console.log(this.state.pelicula)
+            const {original_title, overview} = this.props.pelicula
+            //if(this.state.pelicula){
+              //  console.log(this.state.pelicula)
 
             return(
             <div className='movie-card'>
-                <img src=''></img>
-                <h3 >{this.state.pelicula.original_title}</h3>
-                <p className='descripcion'>{this.state.pelicula.overview} </p>
-                <a href=''>Ir a detalles</a>
-                <button onClick={() => !this.state.esFavorito} > {!this.state.esFavorito ? "Agregar a favoritos" : "Quitar de favoritos"} Agregar a favoritos</button>
+               
+                <h3 >{original_title}</h3>
+                <p className='descripcion'>{overview} </p>
+                <p>Ir a detalles</p>
+                //  <button onClick={() => !this.props.pelicula.esFavorito} > {!this.props.pelicula.esFavorito ? "Agregar a favoritos" : "Quitar de favoritos"}</button>
             </div>
             )
         }}
     
 
 
-}
+
 
 export default Card;
