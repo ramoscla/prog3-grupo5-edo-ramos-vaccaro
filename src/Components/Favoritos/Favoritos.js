@@ -25,14 +25,14 @@ class Favoritos extends Component {
     
 render() {
     console.log(this.state.favoritos)
-    console.log("caca")
 
+    
     return (
         <div>
             <h1>Favoritos</h1>
             <div className="card-grid">
-                {this.state.favoritos.map((id) => (
-                    <Card id={id} />
+                {this.state.favoritos.map((pelicula) => (
+                    <Card pelicula={pelicula} />
                 ))}
             </div>
         </div>
