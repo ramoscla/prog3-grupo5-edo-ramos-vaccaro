@@ -5,7 +5,9 @@ import "./Header.css"
 const Header = () => {
     return (
     <div className="header">
-         <img src="./img/logo.png" alt="logo"></img>
+        <a href="/">
+             <img src="./img/logo.png" alt="logo"/>
+             </a>
         <Navbar/>
     
     </div>
