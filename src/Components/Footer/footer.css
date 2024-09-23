@@ -1,0 +1,19 @@
+.footer {
+    display: flex;
+    background-color: #25312c;
+    border-top: 1px solid #e9ecef;
+
+}
+
+.name-list {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+
+}
+
+.name-list li {
+    margin-left: 10vw;
+    color: #607f72;
+    font-family: "Poppins", sans-serif;
+}

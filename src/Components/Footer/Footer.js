@@ -1,9 +1,10 @@
 import React from "react";
+import "./Footer"
 
 const Footer = () => {
     return(
-        <footer>
-            <ul> 
+        <footer className="footer">
+            <ul className="name-list"> 
                 <li>
                     Joaquina  Edo 
                 </li>

@@ -80,9 +80,9 @@ class Card extends Component{
                 console.log(this.state.pelicula)
 
             return(
-            <div>
+            <div className='movie-card'>
                 <img src=''></img>
-                <h3>{this.state.pelicula.original_title}</h3>
+                <h3 >{this.state.pelicula.original_title}</h3>
                 <p className='descripcion'>{this.state.pelicula.overview} </p>
                 <a href=''>Ir a detalles</a>
                 <button onClick={() => !this.state.esFavorito} > {!this.state.esFavorito ? "Agregar a favoritos" : "Quitar de favoritos"} Agregar a favoritos</button>
