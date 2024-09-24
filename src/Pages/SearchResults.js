@@ -1,6 +1,5 @@
 import { Component } from "react";
 import CardGridSinSlice from "../Components/CardGridSinSlice/CardGridSinSlice";
-import Formulario from "../Components/Formulario/Formulario";
 
 const apiKey = "5d038daa07630bd00fca08f5408cb116";
 
