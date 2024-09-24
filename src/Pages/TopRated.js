@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import CardGrid from "../CardGrid/CardGrid";
-
+//import React, { Component } from "react";
+////import CardGrid from "../CardGrid/CardGrid";
+/*
 class TopRated extends Component {
     constructor(props){
         super(props)
@@ -20,6 +20,6 @@ class TopRated extends Component {
     }
     }
     
-    export default Home;
+    export default Home
 
-
+*/

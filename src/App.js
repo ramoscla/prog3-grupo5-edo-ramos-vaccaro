@@ -1,11 +1,12 @@
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom'
-import Home from './Components/Pages/Home';
+import Home from './Pages/Home';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
-import Favorites from './Components/Pages/Favorites';
-import Detalle from './Components/Pages/Detalle';
-import TopRated from "./Components/Pages/TopRated";
-import NotFound from './Components/Pages/NotFound';
+import Favorites from './Pages/Favorites';
+import Detalle from './Pages/Detalle';
+import TopRated from "./Pages/TopRated";
+import NotFound from './Pages/NotFound';
+import Populares from './Pages/Populares'
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
         <Route path="/favoritos" component={Favorites} />
         <Route path="/detalle/:id" component={Detalle} />
         <Route path="/top" component={TopRated} />
-        <Route path="/populares" component={Home} />
+        <Route path="/populares" component={Populares} />
         <Route path="/404" component={NotFound} />
 
 

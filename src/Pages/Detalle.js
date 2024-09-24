@@ -1,5 +1,5 @@
 import React from "react";
-import DetalleCard from "../DetalleCard/DetalleCard"
+import DetalleCard from "../Components/DetalleCard/DetalleCard"
 const Detalle = (props) => {    
     return (
         <DetalleCard id={props.match.params.id}/>

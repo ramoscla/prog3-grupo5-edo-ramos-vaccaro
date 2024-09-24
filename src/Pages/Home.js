@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Formulario from "../Formulario/Formulario";
+import Formulario from "../Components/Formulario/Formulario";
 
-import CardGrid from "../CardGrid/CardGrid";
+import CardGrid from "../Components/CardGrid/CardGrid";
 
 const apiKey = "5d038daa07630bd00fca08f5408cb116"
 const apiPopulares = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`; 
