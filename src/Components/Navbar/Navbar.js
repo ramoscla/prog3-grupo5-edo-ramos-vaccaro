@@ -18,8 +18,8 @@ const Navbar = () => {
                 </Link>
             </li>
             <li className="nav-item">
-                <Link to="/cartelera" className="nav-links">
-                Cartelera
+                <Link to="/top" className="nav-links">
+                Mejor Puntuados
                 </Link>
             </li>
             <li className="nav-item">

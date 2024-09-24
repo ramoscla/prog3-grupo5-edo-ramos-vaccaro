@@ -12,7 +12,6 @@ class Favoritos extends Component {
     
     componentDidMount() {
 
-        
         const storage = localStorage.getItem("favoritos");
         if (storage !== null) {
             const parsedStorage = JSON.parse(storage);
@@ -36,8 +35,8 @@ render() {
         <div>
             <h1>Favoritos</h1>
             <div className="card-grid">
-                {this.state.peliculas.map((pelicula) => (
-                    <Card pelicula={pelicula} />
+                {this.state.peliculas.map((pelicula, idx) => (
+                    <Card pelicula={pelicula} key={idx} />
                 ))}
             </div>
         </div>

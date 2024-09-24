@@ -29,6 +29,7 @@ class Card extends Component {
 
     agregarAFavoritos(pelicula) {
 
+        
         const storage = localStorage.getItem("favoritos")
         if (storage !== null) {
             const parsedStorage = JSON.parse(storage);
@@ -44,6 +45,7 @@ class Card extends Component {
         this.setState({
             esFavorito: true
         })
+        
     }
 
     quitarDeFavoritos(pelicula) {
@@ -60,20 +62,16 @@ class Card extends Component {
 
     render() {
         const { original_title, overview, poster_path, id } = this.props.pelicula
-        //if(this.state.pelicula){
-        //  console.log(this.state.pelicula)
-              console.log(poster_path)
-
+        const pelicula = this.props.pelicula
         return (
             <div className='movie-card'>
 
                 <h3 >{original_title}</h3>
 
                 <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt='portada'/>
-                <h3>{original_title}</h3>
                 <p className='descripcion'>{overview} </p>
-                <button onClick={() => !this.state.esFavorito ? this.agregarAFavoritos(this.props.pelicula) :this.quitarDeFavoritos(this.props.pelicula)} > {!this.state.esFavorito ? "Agregar a favoritos" : "Quitar de favoritos"}</button>
                 <Link to={`/detalle/${id}`}>Ir a detalles</Link>
+                <button onClick={() => !this.state.esFavorito ? this.agregarAFavoritos(pelicula) : this.quitarDeFavoritos(pelicula)} > {!this.state.esFavorito ? "Agregar a favoritos" : "Quitar de favoritos"}</button>
             </div>
         )
     }
