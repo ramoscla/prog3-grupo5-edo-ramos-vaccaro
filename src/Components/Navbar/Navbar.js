@@ -23,8 +23,8 @@ const Navbar = () => {
                 </Link>
             </li>
             <li className="nav-item">
-                <Link to="/proximamente" className="nav-links">
-                Próximamente
+                <Link to="/populares" className="nav-links">
+                Populares
                 </Link>
             </li>
             </ul>
