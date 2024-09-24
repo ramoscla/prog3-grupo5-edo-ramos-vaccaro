@@ -4,7 +4,8 @@ import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import Favorites from './Components/Pages/Favorites';
 import Detalle from './Components/Pages/Detalle';
-import TopRated from "./Components/Pages/TopRated"
+import TopRated from "./Components/Pages/TopRated";
+import NotFound from './Components/Pages/NotFound';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
         <Route path="/detalle/:id" component={Detalle} />
         <Route path="/top" component={TopRated} />
         <Route path="/populares" component={Home} />
+        <Route path="/404" component={NotFound} />
+
 
       </Switch>
       
