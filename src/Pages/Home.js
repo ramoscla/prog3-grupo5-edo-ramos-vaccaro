@@ -45,7 +45,7 @@ class Home extends Component {
     
     return(
        <div className="home">
-        <Formulario/> 
+        <Formulario history={this.props.history}/> 
         <CardGrid url={apiPopulares}/>
         <CardGrid url={apiTopRated}/> 
        </div>
