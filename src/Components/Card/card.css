@@ -1,8 +1,9 @@
-.card {
-    width: 10vw;
-    height: 35vh;
-    display: flex;
+.movie-card {
+    width: 15vw;
+    height: 45vh;
+    display: grid;
     flex-direction: column;
+    justify-content: center;
     border-radius: 10px;
     background-color: #607f72;
     margin: 2vw;
@@ -12,17 +13,18 @@
 
 }
 
-.card:hover {
+.movie-card:hover {
     transform: scale(1.05);
     height: 50vh;
 }
 
-.card img {
+.movie-card img {
+    justify-self: center;
     width: 10vw;
     height: auto;
 }
 
-.card h3 {
+.movie-card h3 {
     margin: 0;
     padding: 0.5em 0;
     font-size: 1em;
@@ -30,7 +32,7 @@
     color: #ffffff;
 }
 
-.card p {
+.movie-card p {
     margin: 0;
     padding: 0.5em;
     font-size: 0.8em;
@@ -42,7 +44,7 @@
 
 }
 
-.card p:hover {
+.movie-card p:hover {
     white-space: normal;
     overflow: visible;
     max-height: none;
@@ -67,4 +69,5 @@ button:hover {
 a {
     text-decoration: none;
     color: #25312c;
+    margin-top: 1vh ;
 }
