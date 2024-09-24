@@ -32,7 +32,7 @@ class Favoritos extends Component {
 render() {
     console.log(this.state.peliculas)
     return (
-        <div>
+        <div className='favoritos'>
             <h1>Favoritos</h1>
             <div className="card-grid">
                 {this.state.peliculas.map((pelicula, idx) => (

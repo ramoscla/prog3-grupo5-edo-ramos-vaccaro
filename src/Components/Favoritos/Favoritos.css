@@ -1,3 +1,12 @@
+body {
+    padding: 1vw;
+    overflow: hidden;
+}
+
+.favoritos {
+    padding: 5vw;
+}
+
 .card-grid {
     display: flex;
     flex-wrap: wrap;
