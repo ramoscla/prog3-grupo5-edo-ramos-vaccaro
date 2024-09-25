@@ -6,7 +6,9 @@ import Favorites from './Pages/Favorites';
 import Detalle from './Pages/Detalle';
 import TopRated from "./Pages/TopRated";
 import NotFound from './Pages/NotFound';
-import Populares from './Pages/Populares'
+import Populares from './Pages/Populares';
+import SearchResults from './Pages/SearchResults';
+import './App.css'
 
 function App() {
   return (
@@ -14,7 +16,7 @@ function App() {
 
 
       <Header />
-
+      <div className="app">
       <Switch>
 
         <Route path="/" exact={true} component={Home} />
@@ -23,10 +25,13 @@ function App() {
         <Route path="/top" component={TopRated} />
         <Route path="/populares" component={Populares} />
         <Route path="/404" component={NotFound} />
+        <Route path="/search" component={SearchResults} />
+
 
 
       </Switch>
-      
+      </div>
+
       <Footer />
     </>
 

@@ -5,7 +5,8 @@
     padding: 0 20px;
     background-color: #25312c;
     border-bottom: 1px solid #e9ecef;
-    width: 100vw;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 img{

@@ -1,4 +1,4 @@
-.card-container{
+.card-container-slice {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: row;
 }

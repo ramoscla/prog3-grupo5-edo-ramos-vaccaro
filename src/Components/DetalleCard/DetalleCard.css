@@ -1,11 +1,4 @@
-body {
-    background-color: #16261f;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color:#607f72;
-    font-family: "Open Sans", sans-serif;
-}
+
 
 .Detalle {
     display: flex;
@@ -14,6 +7,8 @@ body {
     padding: 2%;
     border-radius: 10px;
     max-width: 80vw;
+
+
 }
 
 .Detalle-img {

@@ -27,7 +27,7 @@ class CardGrid extends Component{
     render(){
     
         return(
-        <section className='card-container'>
+        <section className='card-container-slice'>
        
             {this.state.arrayPeliculas.map((pelicula, idx)=> (
                  <Card pelicula={pelicula} key={idx} /> 

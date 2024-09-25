@@ -11,9 +11,11 @@ class CardGridSinSlice extends Component{
         return (
             <section className='card-container'>
                 <h2>{title}</h2> 
+                <div className = "cards">
                 {arrayPeliculas.map((pelicula, idx) => (
-                    <Card pelicula={pelicula} key={idx} /> 
+                    <Card pelicula={pelicula} key={idx}/> 
                 ))}
+                </div>
             </section>
         );
     }

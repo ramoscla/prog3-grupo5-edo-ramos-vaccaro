@@ -1,3 +1,19 @@
 .app {
     font-family: "Poppins", sans-serif;
+    padding: 0px 20px;
+    margin-bottom: 3%;
+    
+}
+
+
+body {
+    background-color: #16261f;
+    color:#607f72;
+    font-family: "Open Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin: 0%;
+    padding: 0%;
+    overflow-x: hidden;
+
 }

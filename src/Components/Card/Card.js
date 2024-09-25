@@ -27,6 +27,13 @@ class Card extends Component {
         };
     }
 
+    verDescripcion(){
+        this.setState({
+            verDescripcion: !this.state.verDescripcion
+        })
+    }
+
+
     agregarAFavoritos(pelicula) {
 
         
@@ -67,9 +74,14 @@ class Card extends Component {
             <div className='movie-card'>
 
                 <h3 >{original_title}</h3>
-
                 <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt='portada'/>
-                <p className='descripcion'>{overview} </p>
+                
+                <p className='descripcion' onClick={()=> this.verDescripcion()}>{this.state.verDescripcion ? "Ver menos" : 'Ver descripción'}</p> 
+                        {this.state.verDescripcion &&(                          
+                            <section className='extra'>                 
+                            <p>{overview} </p>               
+                            </section>                              
+                        )}
                 <Link to={`/detalle/${id}`}>Ir a detalles</Link>
                 <button onClick={() => !this.state.esFavorito ? this.agregarAFavoritos(pelicula) : this.quitarDeFavoritos(pelicula)} > {!this.state.esFavorito ? "Agregar a favoritos" : "Quitar de favoritos"}</button>
             </div>
