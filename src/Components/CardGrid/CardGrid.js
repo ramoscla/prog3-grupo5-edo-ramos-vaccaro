@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import "./CardGrid.css"
 import Card from '../Card/Card';
-
-
+import Loader from '../Loader/Loader';
 
 
 class CardGrid extends Component{
@@ -11,6 +10,7 @@ class CardGrid extends Component{
 
         this.state={
             arrayPeliculas:[],  
+            isLoading: true
         }
 
         
@@ -19,7 +19,10 @@ class CardGrid extends Component{
     componentDidMount() {
         fetch(this.props.url)
             .then(response => response.json())
-            .then(data => this.setState({ arrayPeliculas: data.results.slice(0,5) })
+            .then(data => this.setState({ 
+                arrayPeliculas: data.results.slice(0,5),
+                isLoading: false
+             })
             )
             .catch(err => console.error(err));
     }
@@ -28,11 +31,13 @@ class CardGrid extends Component{
     
         return(
         <section className='card-container-slice'>
-       
-            {this.state.arrayPeliculas.map((pelicula, idx)=> (
-                 <Card pelicula={pelicula} key={idx} /> 
-            ))}
-       
+            {!this.state.isLoading ? (
+            this.state.arrayPeliculas.map((pelicula, idx)=> (
+                    <Card pelicula={pelicula} key={idx} /> 
+               ))
+            ):(
+                <Loader/>
+            )}   
 
         </section>
         )
