@@ -3,6 +3,7 @@
     background-color: #25312c;
     border-top: 1px solid #e9ecef;
     justify-content: center;
+    
 
 }
 
@@ -13,8 +14,9 @@
 
 }
 
+
 .name-list li {
-    margin-left: 10vw;
+    margin-left: 5vw;
     color: #607f72;
     font-family: "Poppins", sans-serif;
 }

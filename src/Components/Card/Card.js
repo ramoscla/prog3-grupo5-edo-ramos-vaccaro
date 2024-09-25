@@ -78,8 +78,8 @@ class Card extends Component {
                 
                 <p className='descripcion' onClick={()=> this.verDescripcion()}>{this.state.verDescripcion ? "Ver menos" : 'Ver descripción'}</p> 
                         {this.state.verDescripcion &&(                          
-                            <section className='extra'>                 
-                            <p>{overview} </p>               
+                            <section className='descrip'>                
+                            <p>{overview} </p>            
                             </section>                              
                         )}
                 <Link to={`/detalle/${id}`}>Ir a detalles</Link>

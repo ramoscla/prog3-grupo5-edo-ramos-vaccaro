@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import CardGridSinSlice from "../Components/CardGridSinSlice/CardGridSinSlice";
-import Card from "../Components/Card/Card";
 import Loader from "../Components/Loader/Loader";
 
 const apiKey = "5d038daa07630bd00fca08f5408cb116"

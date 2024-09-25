@@ -1,20 +1,20 @@
 .movie-card {
     width: 15vw;
-    height: 45vh;
+    height: 50vh;
     display: grid;
     flex-direction: column;
     justify-content: center;
     border-radius: 10px;
     background-color: #607f72;
-    margin: 2vw;
-    padding: 10px;
+    margin: 1.5vw;
+    padding: 6px;
     overflow: hidden;
     font-family: "Poppins", sans-serif;
 
 }
 
 .movie-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.20);
     height: 50vh;
 }
 
@@ -71,3 +71,4 @@ a {
     color: #25312c;
     margin-top: 1vh ;
 }
+
