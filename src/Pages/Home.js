@@ -48,6 +48,7 @@ class Home extends Component {
         <Formulario/> 
         <div className="cardgrid-container">
         <h3>Más Populares</h3>
+        <Formulario history={this.props.history}/> 
         <CardGrid url={apiPopulares}/>
         </div>
 
