@@ -1,5 +1,6 @@
 import { Component } from "react";
 import CardGridSinSlice from "../Components/CardGridSinSlice/CardGridSinSlice";
+import Loader from "../Components/Loader/Loader";
 
 const apiKey = "5d038daa07630bd00fca08f5408cb116";
 
@@ -9,6 +10,7 @@ class SearchResults extends Component {
     super(props)
     this.state = {
         peliculas: [],
+        isLoading: true
     }
     }
 
@@ -17,7 +19,8 @@ class SearchResults extends Component {
         .then((response)=> response.json())
         .then(data=> {
             this.setState({
-                peliculas: data.results
+                peliculas: data.results,
+                isLoading: false
             })
         })
         .catch((error)=> console.log(error))
@@ -26,9 +29,15 @@ class SearchResults extends Component {
 
     render(){
         return (
-            <>
+        <>
+        {!this.state.isLoading ? (
+          <div>
             <CardGridSinSlice arrayPeliculas={this.state.peliculas}/>
-            </>
+          </div>
+        ):(
+        <Loader/>
+        )}
+        </>
         )
     }
 }

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CardGridSinSlice from "../Components/CardGridSinSlice/CardGridSinSlice";
 import Card from "../Components/Card/Card";
+import Loader from "../Components/Loader/Loader";
 
 const apiKey = "5d038daa07630bd00fca08f5408cb116"
 const apiTopRated = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&page=`; 
@@ -14,6 +15,7 @@ class TopRated extends Component {
             filteredPeliculas: [],
             filterValue: "",
             actualPage: 1,
+            isLoading: true
         };
     }
 
@@ -25,6 +27,7 @@ class TopRated extends Component {
                     peliculas: data.results,
                     filteredPeliculas: data.results,
                     actualPage: this.state.actualPage + 1,
+                    isLoading: false
                 })
             )
             .catch((error) => console.log(error));
@@ -47,6 +50,7 @@ class TopRated extends Component {
     }
         
     handleLoadMore(){
+        this.setState({isLoading: true})
         fetch(`${apiTopRated}${this.state.actualPage}`)
         .then((response) => response.json())
         .then((data) =>
@@ -54,18 +58,22 @@ class TopRated extends Component {
                 peliculas: this.state.peliculas.concat(data.results),
                 filteredPeliculas: this.state.peliculas.concat(data.results),
                 actualPage: this.state.actualPage + 1,
+                isLoading: false
             }))
         .catch((error) => console.log(error));
         };
 
     render() {
         return (
-            <div className="Populares">
-
+            <div className="TopRated">
+            {!this.state.isLoading ? (
+            <>
             <input type='text' value={this.state.filterValue} onChange={(e)=> this.handleFilter(e)}/>
             <button onClick={()=> this.handleResetFilter()}>Reset filter</button>
             <CardGridSinSlice arrayPeliculas={this.state.filteredPeliculas} title="Mejor Puntuados" />
             <button onClick={()=> this.handleLoadMore()}>Cargar más</button>
+            </> ) : (
+            <Loader/>)}
             </div>
         );
     }

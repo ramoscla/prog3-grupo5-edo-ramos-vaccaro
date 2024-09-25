@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import CardGridSinSlice from "../Components/CardGridSinSlice/CardGridSinSlice";
+import Loader from "../Components/Loader/Loader";
 
 const apiKey = "5d038daa07630bd00fca08f5408cb116";
 const apiPopulares = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&page=`;
@@ -12,6 +13,7 @@ class Populares extends Component {
             filteredPeliculas: [],
             filterValue: "",
             actualPage: 1,
+            isLoading: true
         };
     }
 
@@ -23,6 +25,7 @@ class Populares extends Component {
                     peliculas: data.results,
                     filteredPeliculas: data.results,
                     actualPage: this.state.actualPage + 1,
+                    isLoading: false
                 })
             )
             .catch((error) => console.log(error));
@@ -45,6 +48,7 @@ class Populares extends Component {
     }
         
     handleLoadMore(){
+        this.setState({ isLoading: true });
         fetch(`${apiPopulares}${this.state.actualPage}`)
         .then((response) => response.json())
         .then((data) =>
@@ -52,6 +56,7 @@ class Populares extends Component {
                 peliculas: this.state.peliculas.concat(data.results),
                 filteredPeliculas: this.state.peliculas.concat(data.results),
                 actualPage: this.state.actualPage + 1,
+                isLoading: false
             }))
         .catch((error) => console.log(error));
         };
@@ -59,11 +64,14 @@ class Populares extends Component {
     render() {
         return (
             <div className="Populares">
-
+            {!this.state.isLoading ? (
+            <>
             <input type='text' value={this.state.filterValue} onChange={(e)=> this.handleFilter(e)}/>
             <button onClick={()=> this.handleResetFilter()}>Reset filter</button>
             <CardGridSinSlice arrayPeliculas={this.state.filteredPeliculas} title="Populares" />
             <button onClick={()=> this.handleLoadMore()}>Cargar más</button>
+            </> ):(
+            <Loader />)}
             </div>
         );
     }
