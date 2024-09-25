@@ -46,8 +46,15 @@ class Home extends Component {
     return(
        <div className="home">
         <Formulario/> 
+        <div className="cardgrid-container">
+        <h3>Más Populares</h3>
         <CardGrid url={apiPopulares}/>
-        <CardGrid url={apiTopRated}/> 
+        </div>
+
+        <div>
+        <h3 className="cardgrid-container">Mejor Puntuadas</h3>
+        <CardGrid url={apiTopRated}/> </div>
+        
        </div>
     )
 }

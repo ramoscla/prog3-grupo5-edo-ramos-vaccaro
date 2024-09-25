@@ -1,3 +1,11 @@
 .app {
     font-family: "Poppins", sans-serif;
 }
+body {
+    margin: 0;
+    padding: 0 20px; 
+  }
+
+.cardgrid-container{
+    padding: 50px;
+}
