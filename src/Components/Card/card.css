@@ -1,6 +1,6 @@
 .movie-card {
     width: 15vw;
-    height: 50vh;
+    height: 60vh;
     display: grid;
     flex-direction: column;
     justify-content: center;
@@ -38,7 +38,7 @@
     font-size: 0.8em;
     color: #ffffff;
     overflow: hidden;
-    white-space: nowrap;
+    white-space: wrap;
     max-height: 3em;
     font-size: x-small;
 
