@@ -66,10 +66,14 @@ class Populares extends Component {
             <div className="Populares">
             {!this.state.isLoading ? (
             <>
+            <div className="contenedor_form">
+            <form className="form">
             <input type='text' value={this.state.filterValue} onChange={(e)=> this.handleFilter(e)}/>
-            <button onClick={()=> this.handleResetFilter()}>Reset filter</button>
+            <button onClick={()=> this.handleResetFilter()} className="form_boton">Reset filter</button>
+            </form>
+            </div>
             <CardGridSinSlice arrayPeliculas={this.state.filteredPeliculas} title="Populares" />
-            <button onClick={()=> this.handleLoadMore()}>Cargar más</button>
+            <button onClick={()=> this.handleLoadMore()} className="boton_cargar">Cargar más</button>
             </> ):(
             <Loader />)}
             </div>
