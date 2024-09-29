@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "./Formulario.css"
 
 
 class Formulario extends Component {
@@ -27,9 +28,9 @@ class Formulario extends Component {
       return (
       
         <div>
-        <form onSubmit={(e)=> this.handleCancelSubmit(e)}>
+        <form onSubmit={(e)=> this.handleCancelSubmit(e)} className="form">
           <input name= "query" type="text" onChange={(e)=>this.handleFormChange(e)} value={this.state.query} />
-          <button onClick={()=> this.handleFormSubmit()}>Search</button>
+          <button onClick={()=> this.handleFormSubmit()} className="form_boton">Search</button>
         </form>
         </div>
      
