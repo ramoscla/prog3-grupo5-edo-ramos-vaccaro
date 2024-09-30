@@ -75,16 +75,16 @@ class Card extends Component {
 
                 <h3 >{original_title}</h3>
                 <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt='portada'/>
-                
+                <Link to={`/detalle/${id}`}>Ir a detalles</Link>
+                <button onClick={() => !this.state.esFavorito ? this.agregarAFavoritos(pelicula) : this.quitarDeFavoritos(pelicula)} > {!this.state.esFavorito ? "Agregar a favoritos" : "Quitar de favoritos"}</button>
                 <p className='descripcion' onClick={()=> this.verDescripcion()}>{this.state.verDescripcion ? "Ver menos" : 'Ver descripción'}</p> 
                         {this.state.verDescripcion &&(                          
                             <section className='descrip'>                
                             <p>{overview} </p>            
                             </section>                              
                         )}
-                <Link to={`/detalle/${id}`}>Ir a detalles</Link>
-                <button onClick={() => !this.state.esFavorito ? this.agregarAFavoritos(pelicula) : this.quitarDeFavoritos(pelicula)} > {!this.state.esFavorito ? "Agregar a favoritos" : "Quitar de favoritos"}</button>
             </div>
+
         )
     }
 }

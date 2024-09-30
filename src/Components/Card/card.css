@@ -1,6 +1,6 @@
 .movie-card {
-    width: 15vw;
-    height: 60vh;
+    width: 20vw;
+    height: 70vh;
     display: grid;
     flex-direction: column;
     justify-content: center;
@@ -15,7 +15,7 @@
 
 .movie-card:hover {
     transform: scale(1.20);
-    height: 50vh;
+    height: 75vh;
 }
 
 .movie-card img {
@@ -55,7 +55,7 @@ button {
     color: #607f72;
     border: none;
     border-radius: 5px;
-    padding: 10px;
+    padding: 6px;
     margin: 10px 0;
     align-self: center;
     font-family: "Poppins", sans-serif;
@@ -72,3 +72,10 @@ a {
     margin-top: 1vh ;
 }
 
+p.descripcion{
+    font-size: 0.9em
+}
+
+p.descrip{
+    overflow-y:auto
+}
