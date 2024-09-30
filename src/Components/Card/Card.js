@@ -36,7 +36,6 @@ class Card extends Component {
 
     agregarAFavoritos(pelicula) {
 
-        
         const storage = localStorage.getItem("favoritos")
         if (storage !== null) {
             const parsedStorage = JSON.parse(storage);

@@ -24,7 +24,7 @@ function App() {
         <Route path="/detalle/:id" component={Detalle} />
         <Route path="/top" component={TopRated} />
         <Route path="/populares" component={Populares} />
-        <Route path="/404" component={NotFound} />
+        <Route path="/" component={NotFound} />
         <Route path="/search" component={SearchResults} />
 
 
